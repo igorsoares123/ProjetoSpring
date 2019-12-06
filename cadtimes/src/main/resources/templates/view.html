@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+	<head>
+		<title>admin</title>
+	</head>
+	
+	<body>
+	<a href="/">Voltar para o cadastro</a>
+    <div>
+    <h1>Visualiza Usuarios</h1>
+    
+    <table border="1">  
+    <tr>
+      <th>N</th>
+      <th>Nome</th>
+      <th>Tecnico</th>     
+      <th>Excluir</th> 
+      <th>Editar</th>
+    </tr>
+    <tr th:each="u : ${times}">
+      <td th:text=${u.codigo}></td>
+      <td th:text="${u.nome}"></td>  
+      <td th:text="${u.tecnico}"></td>  
+      <td><a th:href="@{/delete/{codigo}(codigo=${u.codigo})}">Excluir</a></td> 
+      <td><a th:href="@{/editar/{codigo}(codigo=${u.codigo})}">Editar</a></td>
+    </tr>
+         </table>
+    </div>
+
+    <!--Rodape-->
+    <div class="rodape">
+      <p>&copy;Todos os direitos Resevados</p>
+    </div>
+    <!--Scripts-->
+	</body>
+	
+</html>

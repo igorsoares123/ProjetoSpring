@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>editar</title>
+</head>
+<body>
+<div class="alert alert-success" th:text="${message}" 
+		 	 th:if="${not #strings.isEmpty(message)}"></div>
+
+		 	
+	<form th:object="${dados}" method="GET" action="/salvar">
+		    <input type="text" th:field="*{codigo}" readonly="readonly"/>
+			<input type="text" th:field="*{nome}" required />
+			<input type="text" th:field="*{tecnico}" required />
+			
+			<button type="submit">Salvar</button>
+	</form>
+</body>
+</html>
