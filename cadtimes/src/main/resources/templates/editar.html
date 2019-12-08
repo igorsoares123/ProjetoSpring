@@ -8,19 +8,24 @@
       background-image: url(banner.jpg); 
       background-repeat: no-repeat;
      }
+     #ie{
+     	text-align:center;
+     }
 	</style>
 </head>
 <body>
 <div class="alert alert-success" th:text="${message}" 
 		 	 th:if="${not #strings.isEmpty(message)}"></div>
-
+		 	 <div id="ie">
 		<h1>Editar Times</h1> 	
 	<form th:object="${dados}" method="GET" action="/salvar">
 		    <input type="text" th:field="*{codigo}" readonly="readonly"/>
 			<input type="text" th:field="*{nome}" required />
 			<input type="text" th:field="*{tecnico}" required />
+
 			
 			<button class="btn btn-success">Salvar</button>
+			</div>
 	</form>
 </body>
 </html>
