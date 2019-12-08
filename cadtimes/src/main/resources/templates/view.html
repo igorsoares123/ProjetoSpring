@@ -1,44 +1,35 @@
-<!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
->
+<html >
 	<head>
-		<title>Lista de Times</title>
+		<title>admin</title>
     	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<meta charset=UTF-8>
 
     <style type="text/css">
-       *{
-		box-sizing: border-box;
-		padding: 0px;
-		margin: 0px;
-		font-family: 'Ubuntu', sans-serif;
-		}
      body{
-		background-image: url('banner.jpg');
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center center;
-		}
+      background-image: url(banner.jpg); 
+      background-repeat: no-repeat;
+     } 
      h1{
      color: white;
      }
      #tab{
-      margin-top: 5%;
+      margin-top: 2%;
      }
-     #link{
-     text-decoration: none;
-     color: red;
+     #lista{
+         width: 800px;
+         text-align: center;
      }
-     
     </style>
 	</head>
 	
 	<body>
-    <div id="tab">
-    <h1>Lista de times cadastrados e suas respectivas informações</h1>
+    <center>
+    <h1>Lista de Times Cadastrados<br><img src="treinador.png"style=" height: 190px" width="230px"></h1>
+    </center>
     
-    <table border="1" class="table table-striped table-dark">  
+    <div id="tab">
+
+    <table id="lista"border="1" class="table table-striped table-dark" >  
     <tr>
       <th scope="col">Código</th>
       <th scope="col">Time</th>
@@ -50,14 +41,14 @@
       <td th:text=${u.codigo}></td>
       <td th:text="${u.nome}"></td>  
       <td th:text="${u.tecnico}"></td>  
-      <td><a th:href="@{/delete/{codigo}(codigo=${u.codigo})}">Excluir</a></td> 
-      <td><a th:href="@{/editar/{codigo}(codigo=${u.codigo})}">Editar</a></td>
+      <td><a th:href="@{/delete/{codigo}(codigo=${u.codigo})}"> <button type="button" class="btn btn-danger" style="width: 120px;">Excluir</button></a></td> 
+      <td><a th:href="@{/editar/{codigo}(codigo=${u.codigo})}"><button type="button" class="btn btn-primary" style="width: 120px;">Editar</button></a></td>
     </tr>
          </table>
     </div>
-    
-    <button type="button" class="btn btn-outline-dark"><a href="/" id="link">Voltar para o cadastro</a></button>
-	
+    <div id="link">
+    <a href="/"><img src="butao.png" style="width: 120px;"></a>
+	</div>
     <!--Rodape-->
     <div class="rodape">
       <p>&copy;Todos os direitos Resevados</p>
